@@ -1,7 +1,0 @@
-{
-  "question": "What is gravity?",
-  "provider": "deepseek",
-  "model": "deepseek-v4-flash",
-  "mode": "auto",
-  "timestamp": "20260514_145019"
-}

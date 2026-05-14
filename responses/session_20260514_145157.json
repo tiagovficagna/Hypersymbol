@@ -1,7 +1,0 @@
-{
-  "question": "O que é a gravidade?",
-  "provider": "qwen_local",
-  "model": "qwen3-1.7b",
-  "mode": "auto",
-  "timestamp": "20260514_145157"
-}
