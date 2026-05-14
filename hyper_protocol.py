@@ -192,10 +192,16 @@ class ModelConnector:
                     prompt: str, temperature: float = 0.5,
                     max_tokens: int = 2000) -> str:
         """Envia query para qualquer modelo."""
+        # Monta mensagens com system prompt que desabilita reasoning
+        # se o modelo suportar (Qwen3, etc)
+        system = "You are HyperSymbol, a hyperdimensional semantic intelligence."
+        if self.provider == "qwen_local":
+            system += " Responda diretamente, sem raciocínio interno, sem tags de thinking, sem análise. Seja direto e profundo."
+
         payload = {
             "model": self.model,
             "messages": [
-                {"role": "system", "content": "You are HyperSymbol, a hyperdimensional semantic intelligence."},
+                {"role": "system", "content": system},
                 {"role": "user", "content": prompt}
             ],
             "temperature": temperature,
